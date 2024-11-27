@@ -39,7 +39,7 @@ A conversion specifier is a character that specifies the type of conversion to b
 (introduced after the character `%`).  This printf function supports the following
 specifiers:
 
-***d, i***
+### ***d, i***
 An argument of type `int` is conveted into decimal notation.
 Example:
 ```
@@ -54,7 +54,7 @@ Output:
 555
 ```
 
-***s***
+### ***s***
 An argument of type `char \*` (char pointer or string) is outputed at the 
 desired format location.  It excludes the null byte `\0`.
 Example:
@@ -70,7 +70,7 @@ This is a string
 Did Bob arrive?
 ```
 
-***c***
+### ***c***
 Outputs an argument of type `char`.
 Example:
 ```
