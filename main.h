@@ -13,20 +13,19 @@
  */
 typedef struct format
 {
-  char *specifier;
+  char specifier;
   int (*func)(va_list lst);
 } frmt;
 
 int _printf(const char *format, ...);
 int printf_char(va_list val);
-int _printf_string(va_list val);
+int printf_string(va_list val);
 int _putchar(char c);
-int print_int(va_list args);
 int print_dec(va_list args);
-int print_perc(void);
-int _strcmp(char *s1, char *s2);
+int print_perc(va_list args);
+int _charcmp(char c1, char c2);
 char *_strdup(char *str);
 int _strlen(char *str);
 char *_strncpy(char *dest, char *src, int n);
-int (*find_format(char *c))(va_list);
+int (*find_format(char c))(va_list);
 #endif
