@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdlib.h>
 
 /**
  * _strdup - Copyes a str into allocated memory
@@ -8,7 +7,7 @@
  */
 char *_strdup(char *str)
 {
-	unsigned int size, i;
+	int size, i;
 	char *cp;
 
 	if (!str || str == NULL)
@@ -37,7 +36,7 @@ char *_strdup(char *str)
  * @str: string to find the length
  * Return: an unsigned int with the size of the str
  */
-unsigned int _strlen(char *str)
+int _strlen(char *str)
 {
 	unsigned int i;
 
