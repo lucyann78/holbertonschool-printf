@@ -55,6 +55,7 @@ int (*find_format(char c))(va_list)
 		{'i', print_int},
 		{'d', print_int},
 		{'%', print_perc},
+		/*{'b', print_b},*/
 		{0, NULL}
 	};
 
