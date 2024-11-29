@@ -20,9 +20,10 @@ typedef struct format
 int _printf(const char *format, ...);
 int printf_char(va_list val);
 int printf_string(va_list val);
-int _putchar(char c);
-int print_dec(va_list args);
+int print_int(va_list args);
 int print_perc(va_list args);
+/*int print_b(va_list args);*/
+int _putchar(char c);
 int _charcmp(char c1, char c2);
 char *_strdup(char *str);
 int _strlen(char *str);

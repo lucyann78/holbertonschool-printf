@@ -1,0 +1,74 @@
+.\" Manpage for _printf.
+.TH man 3 "27 Nov 2024" "1.0" "_printf man page"
+
+.SH NAME
+printf - format and print data
+
+.SH SYNOPSIS
+ .B _printf
+(
+.RI [ format ],
+.RI [ arguments... ]
+)
+
+.SH DESCRIPTION
+This function serves to output formatted text.  It supports format specifiers
+to control the output format of the argumet
+
+.SH OPTIONS
+.TP
+.RI format
+String that determines the format which will be outputed, the string may contain the followind specifiers:
+
+.TP
+.RB %d
+Prints a decimal integer
+.br
+.RI Example:
+.br
+_printf("%d\n", 555);
+.br
+.RI Output:
+.br
+555
+
+.TP
+.RB %i
+Prints a decimal integer (same as the previous)
+.br
+.RI Example:
+.br
+int x = 27
+.br
+_printf("%i\n", x)
+.br
+.RI Output:
+.br
+27
+
+.TP
+.RB %s
+Prints a string (char *)
+.br
+.RI Example:
+.br
+_printf("%s\n", "This is a string");
+.br
+.RI Output:
+.br
+This is a string
+
+.TP
+.RB %c
+Prints a singlr character
+.br
+.RI Example:
+.br
+_printf("%c\n", 'S');
+.br
+.RI Output:
+.br
+
+.SH SEE ALSO
+.BR printf (3),
+.BR sprintf (3)
