@@ -51,10 +51,11 @@ int (*find_format(char c))(va_list)
 	int i = 0;
 	frmt format[] = {
 		{'s', printf_string},
-		/*{'c', printf_char},
-		{'i', print_dec},
-		{'d', print_dec},
-		{'%', print_perc},*/
+		{'c', printf_char},
+		{'i', print_int},
+		{'d', print_int},
+		{'%', print_perc},
+		/*{'b', print_b},*/
 		{0, NULL}
 	};
 
