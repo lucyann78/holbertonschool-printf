@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdarg.h>
+
 /**
  * printf_integer - prints a signed integer to a buffer.
  * @b: pointer to the buffer structure.
