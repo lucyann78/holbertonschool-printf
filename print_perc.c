@@ -3,12 +3,10 @@
 #include <stdarg.h>
 /**
  * print_perc - Prints the percentage symbol.
- * @args: unused variable argument list.
- * Return: 1 to indicate success.
+ * @b: pointer to the buffer structure.
+ * Return: % character printed to a buffer.
  */
-int print_perc(va_list args)
+void print_perc(buffer *b)
 {
-	(void)args;
-	_putchar('%');
-	return (1);
+	write_buffer(b, '%');
 }
