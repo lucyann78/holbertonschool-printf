@@ -24,7 +24,6 @@ int printf_string(buffer *b, va_list val)
 		{
 			write_buffer(b, str[i];
 		}
-		b->data[b->index] = '\0';
 		return (length);
 }
 
