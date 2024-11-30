@@ -1,11 +1,13 @@
 #include "main.h"
-
+#include <stdio.h>
+#include <stdarg.h>
 /**
- * printf_string - print a string.
- * @val: argument.
- * Return: length of string and string printed.
+ * printf_string - print a string to a buffer.
+ * @b: pointer to the buffer structure.
+ * @val: A variadic argument list containing the string to print.
+ * Return: the length of the printed string.
  */
-int printf_string(va_list val)
+int printf_string(buffer *b, va_list val)
 {	char *str;
 	int i;
 	int length;
@@ -20,8 +22,9 @@ int printf_string(va_list val)
 
 		for (i = 0; i < length; i++)
 		{
-			_putchar(str[i]);
+			write_buffer(b, str[i];
 		}
+		b->data[b->index] = '\0';
 		return (length);
 }
 

@@ -1,17 +1,17 @@
 #include "main.h"
-
+#include <stdio.h>
+#include <stdarg.h>
 /**
- * printf_char - prints a character.
- * @val: arguments
- * Return: 1
+ * printf_char - prints a character to a buffer.
+ * @b: pointer to the buffer structure.
+ * @val: a variadic argument list containing the character to print.
+ * Return: a character printed to a buffer.
  */
-int printf_char(va_list val)
+void printf_char(buffer *b, va_list val)
 {
 	char str;
 
-	str = va_arg(val, int);
-
-	_putchar(str);
-
-	return (1);
+	str = (char)va_arg(val, int);
+{
+	write_buffer(b, str);
 }
