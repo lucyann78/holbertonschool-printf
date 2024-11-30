@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdarg.h>
+
 /**
  * printf_unsigned_integer - Prints an unsigned integer to a buffer.
  * @b: pointer to the buffer structure.
