@@ -2,10 +2,10 @@
 
 
 /**
- * _strcmp - Compares two strings
- * @s1: String 1 to compare
- * @s2: String 2 to compare
- * Return: 0 if strings are equal, neg if s1 < s2, pos if s1 > s2
+ * _charcmp - Compares two chars
+ * @c1: Char 1 to compare
+ * @c2: Char 2 to compare
+ * Return: 0 if chars are equal, neg if s1 < s2, pos if s1 > s2
  */
 int _charcmp(char c1, char c2)
 {
@@ -43,26 +43,30 @@ char *_strncpy(char *dest, char *src, int n)
 
 /**
  * find_format - finds the specifier for printf
+ * @b: buffer to write to
  * @c: character to compare
  * Return: Pointer to format function or NULL if fails
  */
-int (*find_format(char c))(va_list)
+void (*find_format(buffer *b, char c))(buffer *, va_list)
 {
 	int i = 0;
 	frmt format[] = {
-		{'s', printf_string},
 		{'c', printf_char},
-		{'i', print_int},
-		{'d', print_int},
-		{'%', print_perc},
-		/*{'b', print_b},*/
+		{'s', printf_string},
+		{'b', print_b},
 		{0, NULL}
 	};
 
+	if (c == '%')
+	{
+		print_perc(b);
+		return (NULL);
+	}
 	while (format[i].specifier != 0)
 	{
 		if (_charcmp(format[i].specifier, c) == 0)
 			return (format[i].func);
+		i++;
 	}
 
 	return (NULL);

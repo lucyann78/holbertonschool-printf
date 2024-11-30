@@ -6,6 +6,20 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <limits.h>
+
+#define BUFFER_SIZE 1024
+
+/**
+ * struct Buffer - buffer to minimize calls to write
+ * @pformat: format to print
+ * @pos: position in the buffer
+ */
+typedef struct Buffer
+{
+char *pformat;
+unsigned int pos;
+} buffer;
+
 /**
  * struct format - organizes specifier and functions
  * @specifier: The specifier for the necesary function in printf
@@ -13,20 +27,25 @@
  */
 typedef struct format
 {
-  char specifier;
-  int (*func)(va_list lst);
+char specifier;
+void (*func)(buffer *b, va_list lst);
 } frmt;
 
 int _printf(const char *format, ...);
-int printf_char(va_list val);
-int printf_string(va_list val);
-int print_int(va_list args);
-int print_perc(va_list args);
-/*int print_b(va_list args);*/
+void printf_char(buffer *b, va_list val);
+void printf_string(buffer *b, va_list val);
+/*void print_int(buffer *b, va_list args);*/
+void print_perc(buffer *b);
+void print_b(buffer *b, va_list args);
 int _putchar(char c);
 int _charcmp(char c1, char c2);
 char *_strdup(char *str);
 int _strlen(char *str);
 char *_strncpy(char *dest, char *src, int n);
-int (*find_format(char c))(va_list);
+void (*find_format(buffer *b, char c))(buffer *, va_list);
+
+buffer *initialize_buffer(int bsize);
+void write_buffer(buffer *b, char c);
+void free_buffer(buffer *b);
+int print_buffer(buffer *b);
 #endif
