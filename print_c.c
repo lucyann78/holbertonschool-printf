@@ -12,6 +12,6 @@ void printf_char(buffer *b, va_list val)
 	char str;
 
 	str = (char)va_arg(val, int);
-{
+
 	write_buffer(b, str);
 }
