@@ -60,7 +60,7 @@ This is a string
 
 .TP
 .RB %c
-Prints a singlr character
+Prints a single character
 .br
 .RI Example:
 .br
@@ -68,6 +68,31 @@ _printf("%c\n", 'S');
 .br
 .RI Output:
 .br
+S
+
+.TP
+.RB %u
+Prints an unsigned int
+.br
+.RI Example:
+.br
+_printf("%u\n", 4294967295);
+.br
+.RI Output:
+.br
+4294967295
+
+.TP
+.RB %b
+Prints an unsigned int in binary
+.br
+.RI Example:
+.br
+_printf("%b\n", 4294967295);
+.br
+.RI Output:
+.br
+11111111111111111111111111111111
 
 .SH SEE ALSO
 .BR printf (3),

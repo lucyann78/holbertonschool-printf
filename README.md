@@ -85,6 +85,31 @@ O
 S
 ```
 
+### ***u***
+Outputs an argument of type `unsigned int`.
+Example:
+```
+unsigned int x = 45098;
+
+_printf("%u\n", x);
+```
+Output:
+```
+45098
+```
+
+### ***b***
+Outputs an `unsigned int` in binary.
+Example:
+```
+_printf("%b\n%b\n", 0, 4294967295);
+```
+Output:
+```
+0
+11111111111111111111111111111111
+```
+
 ## Authors
 - Lucy Ann Santiago Lizasoain <[lucyann78](https://github.com/lucyann78)>
 - Diego Diaz Florez <[anonyd0go](https://github.com/anonyd0go)>

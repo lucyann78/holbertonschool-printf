@@ -7,36 +7,38 @@
  */
 int _printf(const char *format, ...)
 {
-	int tc = 0, i = 0;
+	int tc, i = 0;
 	va_list lst;
-	int (*f)(va_list);
-	char *cpfrmt;
+	void (*f)(buffer *, va_list);
+	buffer *bffr;
 
 	if (format == NULL)
 		return (0);
 
-	cpfrmt = _strdup((char *)format);
-	if (cpfrmt == NULL)
+	bffr = initialize_buffer(BUFFER_SIZE);
+	if (bffr == NULL || bffr->pformat == NULL)
 		return (0);
 
 	va_start(lst, format);
-	while (cpfrmt && cpfrmt[i])
+	while (format && format[i])
 	{
-		if (cpfrmt[i] == '%')
+		if (format[i] == '%')
 		{
-			f = find_format(cpfrmt[i + 1]);
+			f = find_format(bffr, format[i + 1]);
 			if (f != NULL)
-				tc += f(lst);
+				f(bffr, lst);
 			i += 2;
 		}
 		else
 		{
-			tc += _putchar(cpfrmt[i]);
+			write_buffer(bffr, format[i]);
 			i++;
 		}
 	}
+	bffr->pformat[bffr->pos] = '\0';
+	tc = print_buffer(bffr);
 	va_end(lst);
-	free(cpfrmt);
+	free_buffer(bffr);
 
 	return (tc);
 }
