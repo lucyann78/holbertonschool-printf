@@ -57,6 +57,9 @@ void (*find_format(buffer *b, char c))(buffer *, va_list)
 		{'d', printf_integer},
 		{'u', printf_unsigned_integer},
 		{'b', print_b},
+		{'o', print_o},
+		{'x', print_x},
+		{'X', print_X},
 		{0, NULL}
 	};
 
