@@ -7,7 +7,7 @@
  * @val: A variadic argument list containing the string to print.
  * Return: the length of the printed string.
  */
-int printf_string(buffer *b, va_list val)
+void printf_string(buffer *b, va_list val)
 {	char *str;
 	int i;
 	int length;
@@ -22,8 +22,7 @@ int printf_string(buffer *b, va_list val)
 
 		for (i = 0; i < length; i++)
 		{
-			write_buffer(b, str[i];
+			write_buffer(b, str[i]);
 		}
-		return (length);
 }
 

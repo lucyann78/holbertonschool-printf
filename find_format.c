@@ -53,6 +53,9 @@ void (*find_format(buffer *b, char c))(buffer *, va_list)
 	frmt format[] = {
 		{'c', printf_char},
 		{'s', printf_string},
+		{'i', printf_integer},
+		{'d', printf_integer},
+		{'u', printf_unsigned_integer},
 		{'b', print_b},
 		{0, NULL}
 	};

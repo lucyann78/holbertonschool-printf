@@ -34,7 +34,8 @@ void (*func)(buffer *b, va_list lst);
 int _printf(const char *format, ...);
 void printf_char(buffer *b, va_list val);
 void printf_string(buffer *b, va_list val);
-/*void print_int(buffer *b, va_list args);*/
+void printf_integer(buffer *b, va_list args);
+void printf_unsigned_integer(buffer *b, va_list val);
 void print_perc(buffer *b);
 void print_b(buffer *b, va_list args);
 int _putchar(char c);

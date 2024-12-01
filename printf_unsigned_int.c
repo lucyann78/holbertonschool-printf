@@ -10,6 +10,9 @@
 void printf_unsigned_integer(buffer *b, va_list val)
 {
 	unsigned int n = va_arg(val, unsigned int);
+	int i = 0;
+	int j;
+	char temp[11];
 
 	if (n == 0)
 	{
@@ -17,16 +20,11 @@ void printf_unsigned_integer(buffer *b, va_list val)
 		return;
 	}
 
-	char temp[11];
-	int i = 0;
-
 	while (n > 0)
 	{
 		temp[i++] = (n % 10) + '0';
 		n /= 10;
 	}
-
-	int j;
 
 	for (j = i - 1; j >= 0; j--)
 	{
