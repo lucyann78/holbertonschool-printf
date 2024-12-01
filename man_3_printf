@@ -94,6 +94,42 @@ _printf("%b\n", 4294967295);
 .br
 11111111111111111111111111111111
 
+.TP
+.RB %o
+Prints an unsigned int in octal
+.br
+.RI Example:
+.br
+_printf("%o\n", 4294967295);
+.br
+.RI Output:
+.br
+37777777777
+
+.TP
+.RB %x
+Prints an unsigned int in lowecase hex
+.br
+.RI Example:
+.br
+_printf("%x\n", 4294967295);
+.br
+.RI Output:
+.br
+ffffffff
+
+.TP
+.RB %X
+Prints an unsigned int in uppercase hex
+.br
+.RI Example:
+.br
+_printf("%X\n", 4294967295);
+.br
+.RI Output:
+.br
+FFFFFFFF
+
 .SH SEE ALSO
 .BR printf (3),
 .BR sprintf (3)

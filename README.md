@@ -110,6 +110,30 @@ Output:
 11111111111111111111111111111111
 ```
 
+### ***o***
+Outputs an `unsigned int` in binary.
+Example:
+```
+_printf("%o\n%o\n", 0, 4294967295);
+```
+Output:
+```
+0
+37777777777
+```
+
+### ***x, X***
+Outputs an `unsigned int` in binary.
+Example:
+```
+_printf("%x\n%X\n", 4294967296, 4294967295);
+```
+Output:
+```
+ffffffff
+FFFFFFFF
+```
+
 ## Authors
 - Lucy Ann Santiago Lizasoain <[lucyann78](https://github.com/lucyann78)>
 - Diego Diaz Florez <[anonyd0go](https://github.com/anonyd0go)>

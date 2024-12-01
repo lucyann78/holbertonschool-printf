@@ -33,6 +33,11 @@ void write_buffer(buffer *b, char c)
 {
 	if (b == NULL || c == 0)
 		return;
+	if(b->pos == BUFFER_SIZE)
+	{
+		print_buffer(b);
+		b->pos = 0;
+	}
 
 	b->pformat[b->pos++] = c;
 }
@@ -44,13 +49,13 @@ void write_buffer(buffer *b, char c)
  */
 int print_buffer(buffer *b)
 {
-	unsigned int i;
+	/*unsigned int i;
 	int t = 0;
 
 	for (i = 0; i < b->pos; i++)
 		t += _putchar(b->pformat[i]);
-	return (t);
-	/*return(write(1, b->pformat, (b->pos - 1)));*/
+	return (t);*/
+	return(write(1, b->pformat, b->pos));
 }
 
 
